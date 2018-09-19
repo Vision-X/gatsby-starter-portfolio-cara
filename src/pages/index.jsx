@@ -1,5 +1,5 @@
 /* global tw */
-import React from 'react';
+import React, { Fragment } from 'react';
 import styled from 'react-emotion';
 import { Parallax, ParallaxLayer } from 'react-spring';
 import 'typeface-cantata-one';
@@ -42,6 +42,11 @@ const Inner = styled.div`
 
 const BigTitle = styled.h1`
   ${tw('text-5xl lg:text-6xl font-serif text-white mb-6 tracking-wide')};
+  text-shadow: 0 5px 35px rgba(255, 255, 255, 0.15);
+`;
+
+const SecondaryTitle = styled.small`
+  ${tw('text-4xl lg:text-4xl font-serif italic text-white mb-8 tracking-wide relative inline-block')};
   text-shadow: 0 5px 35px rgba(255, 255, 255, 0.15);
 `;
 
@@ -126,7 +131,7 @@ const Footer = styled.footer`
 `;
 
 const Index = () => (
-  <React.Fragment>
+  <Fragment>
     <SEO />
     <Parallax pages={4}>
       <Divider speed={0.2} offset={0}>
@@ -159,9 +164,11 @@ const Index = () => (
       <Content speed={0.4} offset={0}>
         <Hero>
           <BigTitle>
-            Hello, <br /> I'm John Doe.
+            Michael Marlow
+            <br />
+            <SecondaryTitle className="italic">Full-Stack Developer</SecondaryTitle>
           </BigTitle>
-          <Subtitle>I'm creating noice web experiences for the next generation of consumer-facing companies.</Subtitle>
+          <Subtitle>I am a Full-Stack Web Developer based out of Denver, CO.</Subtitle>
         </Hero>
       </Content>
       <DividerMiddle bg="linear-gradient(to right, SlateBlue 0%, DeepSkyBlue 100%)" speed={-0.2} offset={1.1} />
@@ -307,7 +314,7 @@ const Index = () => (
         <SVG icon="hexa" width={8} stroke={colors['grey-darkest']} left="80%" top="70%" />
       </Divider>
     </Parallax>
-  </React.Fragment>
+  </Fragment>
 );
 
 export default Index;
